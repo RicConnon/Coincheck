@@ -5,10 +5,11 @@ public class Coin {
 	private String id;
 	private String name;
 	private String symbol;
-	private double priceUsd;
+	private int rank;
+	private double priceEuro;
 	private double priceBtc;
-	private double dayVolumeUsd;
-	private double marketCapUsd;
+	private double dayVolumeEuro;
+	private double marketCapEuro;
 	private double availableSupply;
 	private double totalSupply;
 	private double maxSupply;
@@ -42,11 +43,11 @@ public class Coin {
 	}
 
 	public double getPriceUsd() {
-		return priceUsd;
+		return priceEuro;
 	}
 
 	public void setPriceUsd(double priceUsd) {
-		this.priceUsd = priceUsd;
+		this.priceEuro = priceUsd;
 	}
 
 	public double getPriceBtc() {
@@ -58,19 +59,19 @@ public class Coin {
 	}
 
 	public double getDayVolumeUsd() {
-		return dayVolumeUsd;
+		return dayVolumeEuro;
 	}
 
 	public void setDayVolumeUsd(double dayVolumeUsd) {
-		this.dayVolumeUsd = dayVolumeUsd;
+		this.dayVolumeEuro = dayVolumeUsd;
 	}
 
 	public double getMarketCapUsd() {
-		return marketCapUsd;
+		return marketCapEuro;
 	}
 
 	public void setMarketCapUsd(double marketCapUsd) {
-		this.marketCapUsd = marketCapUsd;
+		this.marketCapEuro = marketCapUsd;
 	}
 
 	public double getAvailableSupply() {
@@ -127,6 +128,14 @@ public class Coin {
 
 	public void setLastUpdated(double lastUpdated) {
 		this.lastUpdated = lastUpdated;
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
 	}
 
 }

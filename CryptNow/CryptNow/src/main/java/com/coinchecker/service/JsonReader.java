@@ -8,25 +8,10 @@ import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.Charset;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class JsonReader {
-
-	public String parseJson(JSONObject json){
-		JSONObject obj = json;
-		String price_usd = "";
-		String pageName = obj.getJSONObject("pageInfo").getString("pageName");
-	
-		JSONArray arr = obj.getJSONArray("posts");
-		for (int i = 0; i < arr.length(); i++)
-		{
-		    price_usd = arr.getJSONObject(i).getString("price_usd");
-		}
-		
-		return price_usd;
-	}
 
 	private static String readAll(Reader rd) throws IOException {
 		StringBuilder sb = new StringBuilder();
