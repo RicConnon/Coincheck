@@ -1,12 +1,12 @@
 package com.coinchecker.model;
 
-public class Coin {
+public class Coin  {
 
 	private String id;
 	private String name;
 	private String symbol;
 	private int rank;
-	private double priceEuro;
+	private String priceEuro;
 	private double priceBtc;
 	private double dayVolumeEuro;
 	private double marketCapEuro;
@@ -42,12 +42,12 @@ public class Coin {
 		this.symbol = symbol;
 	}
 
-	public double getPriceUsd() {
+	public String getPriceEur() {
 		return priceEuro;
 	}
 
-	public void setPriceUsd(double priceUsd) {
-		this.priceEuro = priceUsd;
+	public void setPriceEur(String string) {
+		this.priceEuro = string;
 	}
 
 	public double getPriceBtc() {
@@ -58,19 +58,19 @@ public class Coin {
 		this.priceBtc = priceBtc;
 	}
 
-	public double getDayVolumeUsd() {
+	public double getDayVolumeEur() {
 		return dayVolumeEuro;
 	}
 
-	public void setDayVolumeUsd(double dayVolumeUsd) {
+	public void setDayVolumeEur(double dayVolumeUsd) {
 		this.dayVolumeEuro = dayVolumeUsd;
 	}
 
-	public double getMarketCapUsd() {
+	public double getMarketCapEur() {
 		return marketCapEuro;
 	}
 
-	public void setMarketCapUsd(double marketCapUsd) {
+	public void setMarketCapEur(double marketCapUsd) {
 		this.marketCapEuro = marketCapUsd;
 	}
 
@@ -137,5 +137,5 @@ public class Coin {
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
-
+    
 }

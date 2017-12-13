@@ -89,56 +89,59 @@ html, body, h1, h2, h3, h4, h5 {
 		</header>
 
 		<div class="w3-row-padding w3-margin-bottom">
-			<a href="http://localhost:8080/CryptNow/bitcoin.html">
+			<a href="http://localhost:8080/CryptNow/details/1.html">
 				<div class="w3-quarter">
 					<div class="w3-container w3-red w3-padding-16">
 						<div class="w3-left">
 							<i class="fa fa-comment w3-xxxlarge"></i>
 						</div>
 						<div class="w3-right">
-							<h3>&dollar;${bitcoin_price}</h3>
+							<h3>&euro;${rank1_price}</h3>
 						</div>
 						<div class="w3-clear"></div>
-						<h4>Bitcoin</h4>
+						<h4>${rank1}</h4>
+					</div>
+				</div>
+			</a> <a href="http://localhost:8080/CryptNow/details/2.html">
+				<div class="w3-quarter">
+					<div class="w3-container w3-blue w3-padding-16">
+						<div class="w3-left">
+							<i class="fa fa-eye w3-xxxlarge"></i>
+						</div>
+						<div class="w3-right">
+							<h3>&euro;${rank2_price}</h3>
+						</div>
+						<div class="w3-clear"></div>
+						<h4>${rank2}</h4>
+					</div>
+				</div>
+			</a> <a href="http://localhost:8080/CryptNow/details/3.html">
+				<div class="w3-quarter">
+					<div class="w3-container w3-teal w3-padding-16">
+						<div class="w3-left">
+							<i class="fa fa-share-alt w3-xxxlarge"></i>
+						</div>
+						<div class="w3-right">
+							<h3>&euro;${rank3_price}</h3>
+						</div>
+						<div class="w3-clear"></div>
+						<h4>${rank3}</h4>
+					</div>
+				</div>
+			</a> <a href="http://localhost:8080/CryptNow/details/4.html">
+				<div class="w3-quarter">
+					<div class="w3-container w3-orange w3-text-white w3-padding-16">
+						<div class="w3-left">
+							<i class="fa fa-users w3-xxxlarge"></i>
+						</div>
+						<div class="w3-right">
+							<h3>&euro;${rank4_price}</h3>
+						</div>
+						<div class="w3-clear"></div>
+						<h4>${rank4}</h4>
 					</div>
 				</div>
 			</a>
-			<div class="w3-quarter">
-				<div class="w3-container w3-blue w3-padding-16">
-					<div class="w3-left">
-						<i class="fa fa-eye w3-xxxlarge"></i>
-					</div>
-					<div class="w3-right">
-						<h3>&dollar;${eth_price}</h3>
-					</div>
-					<div class="w3-clear"></div>
-					<h4>Ethereum</h4>
-				</div>
-			</div>
-			<div class="w3-quarter">
-				<div class="w3-container w3-teal w3-padding-16">
-					<div class="w3-left">
-						<i class="fa fa-share-alt w3-xxxlarge"></i>
-					</div>
-					<div class="w3-right">
-						<h3>&dollar;${btc_price}</h3>
-					</div>
-					<div class="w3-clear"></div>
-					<h4>Bitcoin Cash</h4>
-				</div>
-			</div>
-			<div class="w3-quarter">
-				<div class="w3-container w3-orange w3-text-white w3-padding-16">
-					<div class="w3-left">
-						<i class="fa fa-users w3-xxxlarge"></i>
-					</div>
-					<div class="w3-right">
-						<h3>&dollar;${iota_price}</h3>
-					</div>
-					<div class="w3-clear"></div>
-					<h4>IOTA</h4>
-				</div>
-			</div>
 		</div>
 
 		<div class="w3-panel">
@@ -149,38 +152,38 @@ html, body, h1, h2, h3, h4, h5 {
 					<table class="w3-table w3-striped w3-white">
 						<tr>
 							<td><i class="fa fa-user w3-text-blue w3-large"></i></td>
-							<td>Bitcoin</td>
-							<td><i>&dollar;${bitcoin_price}</i></td>
+							<td>${rank1}</td>
+							<td><i>&euro;${rank1_price}</i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-							<td>Ethereum</td>
-							<td><i>&dollar;${bitcoin_price}</i></td>
+							<td>${rank2}</td>
+							<td><i>&euro;${rank2_price}</i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
-							<td>Bitcoin Cash</td>
-							<td><i>&dollar;${bitcoin_price}</i></td>
+							<td>${rank3}</td>
+							<td><i>&euro;${rank3_price}</i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-comment w3-text-red w3-large"></i></td>
-							<td>IOTA</td>
-							<td><i>&dollar;${bitcoin_price}</i></td>
+							<td>${rank4}</td>
+							<td><i>&euro;${rank4_price}</i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
-							<td>Ripple</td>
-							<td><i>&dollar;${bitcoin_price}</i></td>
+							<td>${rank5}</td>
+							<td><i>&euro;${rank5_price}</i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
-							<td>Litecoin</td>
-							<td><i>&dollar;${bitcoin_price}</i></td>
+							<td>${rank6}</td>
+							<td><i>&euro;${rank6_price}</i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
-							<td>Dash</td>
-							<td><i>&dollar;${bitcoin_price}</i></td>
+							<td>${rank7}</td>
+							<td><i>&euro;${rank7_price}</i></td>
 						</tr>
 					</table>
 				</div>

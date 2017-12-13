@@ -83,22 +83,19 @@ html, body, h1, h2, h3, h4, h5 {
 
 		<!-- Header -->
 		<header class="w3-container" style="padding-top: 22px">
-			<h5>
-				<b><i class="fa fa-dashboard"></i> Top Four:</b>
-			</h5>
 		</header>
 
 		<div class="w3-row-padding w3-margin-bottom">
-			<div class="w3-quarter">
+			<div class="w3-twothird">
 				<div class="w3-container w3-red w3-padding-16">
 					<div class="w3-left">
 						<i class="fa fa-comment w3-xxxlarge"></i>
 					</div>
 					<div class="w3-right">
-						<h3>&dollar;${bitcoin_price}</h3>
+						<h3>&euro;${coin_price}</h3>
 					</div>
 					<div class="w3-clear"></div>
-					<h4>Bitcoin</h4>
+					<h4>${coin_name}</h4>
 				</div>
 			</div>
 		</div>
@@ -107,42 +104,42 @@ html, body, h1, h2, h3, h4, h5 {
 			<div class="w3-row-padding" style="margin: 0 -16px">
 				
 				<div class="w3-twothird">
-					<h5>Bitcoin</h5>
+					<h5>${coin_name}</h5>
 					<table class="w3-table w3-striped w3-white">
 						<tr>
 							<td><i class="fa fa-user w3-text-blue w3-large"></i></td>
 							<td>Price</td>
-							<td><i>&dollar;${bitcoin_price}</i></td>
+							<td><i><b>&euro;${coin_price}</b></i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-bell w3-text-red w3-large"></i></td>
 							<td>Market Cap</td>
-							<td><i>&dollar;${market_cap_usd}</i></td>
+							<td><i><b>&euro;${market_cap_eur}</b></i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
 							<td>Volume (24h)</td>
-							<td><i>&dollar;${day_volume_usd}</i></td>
+							<td><i><b>&euro;${day_volume_eur}</b></i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-comment w3-text-red w3-large"></i></td>
 							<td>Circulating Supply</td>
-							<td><i>&dollar;${total_supply}</i></td>
+							<td><i><b>&euro;${total_supply}</b></i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
 							<td>Change (1h)</td>
-							<td><i>&#37;${change_1h}</i></td>
+							<td><i><b>&#37;${change_1h}</b></i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
 							<td>Change (24h)</td>
-							<td><i>&#37;${change_24h}</i></td>
+							<td><i><b>&#37;${change_24h}</b></i></td>
 						</tr>
 						<tr>
 							<td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
 							<td>Change (7d)</td>
-							<td><i>&#37;${change_7d}</i></td>
+							<td><i><b>&#37;${change_7d}</b></i></td>
 						</tr>
 					</table>
 				</div>
