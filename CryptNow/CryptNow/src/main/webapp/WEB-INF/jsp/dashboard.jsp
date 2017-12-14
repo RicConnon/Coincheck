@@ -16,7 +16,9 @@ html, body, h1, h2, h3, h4, h5 {
 </style>
 
 <head>
-	<link rel="shortcut icon" href="http://localhost:8080/CryptNow/images/favicon.ico" />
+<link rel="shortcut icon"
+	href="http://localhost:8080/CryptNow/images/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/CryptNow/resources/Style.css">
 </head>
 
 <body class="w3-light-grey">
@@ -28,8 +30,8 @@ html, body, h1, h2, h3, h4, h5 {
 			onclick="w3_open();">
 			<i class="fa fa-bars"></i>  Menu
 		</button>
-		<span class="w3-bar-item w3-right">
-			<img src="images/favicon-32x32.png">
+		<span class="w3-bar-item w3-right"> <img
+			src="images/favicon-32x32.png">
 		</span>
 	</div>
 
@@ -39,8 +41,8 @@ html, body, h1, h2, h3, h4, h5 {
 		<br>
 		<div class="w3-container w3-row">
 			<div class="w3-col s4">
-				<img src="images/favicon-32x32.png" class="w3-circle w3-margin-right"
-					style="width: 46px">
+				<img src="images/favicon-32x32.png"
+					class="w3-circle w3-margin-right" style="width: 46px">
 			</div>
 			<div class="w3-col s8 w3-bar">
 				<span>Welcome, <strong>${greeting}</strong></span><br> <a
@@ -101,7 +103,7 @@ html, body, h1, h2, h3, h4, h5 {
 				<div class="w3-quarter">
 					<div class="w3-container w3-red w3-padding-16">
 						<div class="w3-left">
-							<i class="fa fa-comment w3-xxxlarge"></i>
+							<img src=${rank1_pic} style="width: 60px; height: 60px;"></img>
 						</div>
 						<div class="w3-right">
 							<h3>&euro;${rank1_price}</h3>
@@ -114,7 +116,7 @@ html, body, h1, h2, h3, h4, h5 {
 				<div class="w3-quarter">
 					<div class="w3-container w3-blue w3-padding-16">
 						<div class="w3-left">
-							<i class="fa fa-eye w3-xxxlarge"></i>
+							<img src=${rank2_pic} style="width: 60px; height: 60px;"></img>
 						</div>
 						<div class="w3-right">
 							<h3>&euro;${rank2_price}</h3>
@@ -127,7 +129,7 @@ html, body, h1, h2, h3, h4, h5 {
 				<div class="w3-quarter">
 					<div class="w3-container w3-teal w3-padding-16">
 						<div class="w3-left">
-							<i class="fa fa-share-alt w3-xxxlarge"></i>
+							<img src=${rank3_pic} style="width: 60px; height: 60px;"></img>
 						</div>
 						<div class="w3-right">
 							<h3>&euro;${rank3_price}</h3>
@@ -140,7 +142,7 @@ html, body, h1, h2, h3, h4, h5 {
 				<div class="w3-quarter">
 					<div class="w3-container w3-orange w3-text-white w3-padding-16">
 						<div class="w3-left">
-							<i class="fa fa-users w3-xxxlarge"></i>
+							<img src=${rank4_pic} style="width: 60px; height: 60px;"></img>
 						</div>
 						<div class="w3-right">
 							<h3>&euro;${rank4_price}</h3>
@@ -159,37 +161,37 @@ html, body, h1, h2, h3, h4, h5 {
 					<h5>Coins</h5>
 					<table class="w3-table w3-striped w3-white">
 						<tr>
-							<td><i class="fa fa-user w3-text-blue w3-large"></i></td>
+							<td><img id="small-coin-icon" src=${rank1_pic}></img></td>
 							<td>${rank1}</td>
 							<td><i>&euro;${rank1_price}</i></td>
 						</tr>
 						<tr>
-							<td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+							<td><img id="small-coin-icon" src=${rank2_pic}></img></td>
 							<td>${rank2}</td>
 							<td><i>&euro;${rank2_price}</i></td>
 						</tr>
 						<tr>
-							<td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
+							<td><img id="small-coin-icon" src=${rank3_pic}></img></td>
 							<td>${rank3}</td>
 							<td><i>&euro;${rank3_price}</i></td>
 						</tr>
 						<tr>
-							<td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+							<td><img id="small-coin-icon" src=${rank4_pic}></img></td>
 							<td>${rank4}</td>
 							<td><i>&euro;${rank4_price}</i></td>
 						</tr>
 						<tr>
-							<td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
+							<td><img id="small-coin-icon" src=${rank5_pic}></img></td>
 							<td>${rank5}</td>
 							<td><i>&euro;${rank5_price}</i></td>
 						</tr>
 						<tr>
-							<td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
+							<td><img id="small-coin-icon" src=${rank6_pic}></img></td>
 							<td>${rank6}</td>
 							<td><i>&euro;${rank6_price}</i></td>
 						</tr>
 						<tr>
-							<td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
+							<td><img id="small-coin-icon" src=${rank7_pic}></img></td>
 							<td>${rank7}</td>
 							<td><i>&euro;${rank7_price}</i></td>
 						</tr>

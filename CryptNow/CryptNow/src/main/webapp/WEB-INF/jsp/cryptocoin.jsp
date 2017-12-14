@@ -95,7 +95,7 @@ html, body, h1, h2, h3, h4, h5 {
 			<div class="w3-twothird">
 				<div class="w3-container w3-red w3-padding-16" >
 					<div class="w3-left">
-						<img class="w3-quarter" src=${img_location}></img>
+						<img id="coin-icon" class="w3-quarter" src=${img_location}></img>
 					</div>
 					<div id="inner">
 						<h4>${coin_name}</h4>
@@ -104,7 +104,6 @@ html, body, h1, h2, h3, h4, h5 {
 						<h3>&euro;${coin_price}</h3>
 					</div>
 					<div class="w3-clear"></div>
-
 				</div>
 			</div>
 		</div>

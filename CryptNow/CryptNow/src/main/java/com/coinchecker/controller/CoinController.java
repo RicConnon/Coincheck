@@ -23,7 +23,7 @@ public class CoinController {
 
 	@RequestMapping(value = "/coins")
 	public String sampleApi(Model model) throws JSONException, IOException {
-		
+
 		List<Coin> coins = addCoins();
 
 		for (int i = 0; i < coins.size(); i++) {
@@ -31,30 +31,37 @@ public class CoinController {
 			case 1:
 				model.addAttribute("rank1_price", coins.get(0).getPriceEur());
 				model.addAttribute("rank1", coins.get(0).getName());
+				model.addAttribute("rank1_pic", coins.get(0).getImgLocation());
 				break;
 			case 2:
 				model.addAttribute("rank2_price", coins.get(1).getPriceEur());
 				model.addAttribute("rank2", coins.get(1).getName());
+				model.addAttribute("rank2_pic", coins.get(1).getImgLocation());
 				break;
 			case 3:
 				model.addAttribute("rank3_price", coins.get(2).getPriceEur());
 				model.addAttribute("rank3", coins.get(2).getName());
+				model.addAttribute("rank3_pic", coins.get(2).getImgLocation());
 				break;
 			case 4:
 				model.addAttribute("rank4_price", coins.get(3).getPriceEur());
 				model.addAttribute("rank4", coins.get(3).getName());
+				model.addAttribute("rank4_pic", coins.get(3).getImgLocation());
 				break;
 			case 5:
 				model.addAttribute("rank5_price", coins.get(4).getPriceEur());
 				model.addAttribute("rank5", coins.get(4).getName());
+				model.addAttribute("rank5_pic", coins.get(4).getImgLocation());
 				break;
 			case 6:
 				model.addAttribute("rank6_price", coins.get(5).getPriceEur());
 				model.addAttribute("rank6", coins.get(5).getName());
+				model.addAttribute("rank6_pic", coins.get(5).getImgLocation());
 				break;
 			case 7:
 				model.addAttribute("rank7_price", coins.get(6).getPriceEur());
 				model.addAttribute("rank7", coins.get(6).getName());
+				model.addAttribute("rank7_pic", coins.get(6).getImgLocation());
 				break;
 			default:
 				break;
@@ -66,12 +73,12 @@ public class CoinController {
 
 	@RequestMapping(value = "/details/{rank}")
 	public String coinPage(Model model, @PathVariable int rank) throws JSONException, IOException {
-		
+
 		List<Coin> coins = addCoins();
-		
+
 		Coin coin = coins.get(rank - 1);
 		DecimalFormat format = new DecimalFormat("#,###.00");
-				
+
 		model.addAttribute("coin_name", coin.getName());
 
 		model.addAttribute("coin_price", coin.getPriceEur());
@@ -81,7 +88,6 @@ public class CoinController {
 		model.addAttribute("change_1h", coin.getHourChange());
 		model.addAttribute("change_24h", coin.getDayChange());
 		model.addAttribute("change_7d", coin.getWeekChange());
-		System.out.println("Coin Location: " + coin.getImgLocation());
 		model.addAttribute("img_location", coin.getImgLocation());
 
 		return "cryptocoin";
@@ -107,27 +113,27 @@ public class CoinController {
 		coin.setDayChange(obj.getDouble("percent_change_24h"));
 		coin.setWeekChange(obj.getDouble("percent_change_7d"));
 		coin.setLastUpdated(obj.getDouble("last_updated"));
-		
-		switch(obj.getString("id")){
-		case "bitcoin": 
+
+		switch (obj.getString("id")) {
+		case "bitcoin":
 			coin.setImgLocation("/CryptNow/images/bitcoin.png");
 			break;
-		case "ethereum": 
+		case "ethereum":
 			coin.setImgLocation("/CryptNow/images/eth.png");
 			break;
-		case "bitcoin-cash": 
+		case "bitcoin-cash":
 			coin.setImgLocation("/CryptNow/images/btc.png");
 			break;
-		case "litecoin": 
+		case "litecoin":
 			coin.setImgLocation("/CryptNow/images/litecoin.png");
 			break;
-		case "ripple": 
+		case "ripple":
 			coin.setImgLocation("/CryptNow/images/ripple.png");
 			break;
-		case "iota": 
+		case "iota":
 			coin.setImgLocation("/CryptNow/images/iota.png");
 			break;
-		case "dash": 
+		case "dash":
 			coin.setImgLocation("/CryptNow/images/dash.png");
 			break;
 		default:
@@ -146,7 +152,7 @@ public class CoinController {
 			JSONObject json = JsonReader.readJsonFromUrl(
 					"https://api.coinmarketcap.com/v1/ticker/?convert=EUR&start=" + start + "&limit=1");
 			Coin coin = parseJson(json);
-			//System.out.println(coin);
+			// System.out.println(coin);
 			coins.add(coin);
 		}
 

@@ -8,3 +8,16 @@
 #inner {
 	display: inline-block;
 }
+
+#coin-icon{
+	
+	width: 100px;
+	length: 100px;
+	
+}
+
+#small-coin-icon{
+
+	width:35px;
+	height:35px;
+}
