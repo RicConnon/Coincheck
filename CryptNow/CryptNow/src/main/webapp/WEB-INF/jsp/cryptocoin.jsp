@@ -13,6 +13,13 @@ html, body, h1, h2, h3, h4, h5 {
 	font-family: "Raleway", sans-serif
 }
 </style>
+
+<head>
+<link rel="shortcut icon"
+	href="http://localhost:8080/CryptNow/images/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/CryptNow/resources/Style.css">
+</head>
+
 <body class="w3-light-grey">
 
 	<!-- Top container -->
@@ -35,10 +42,11 @@ html, body, h1, h2, h3, h4, h5 {
 					style="width: 46px">
 			</div>
 			<div class="w3-col s8 w3-bar">
-				<span>Welcome, <strong>${greeting}</strong></span><br> <a href="#"
-					class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a> <a
-					href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-				<a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+				<span>Welcome, <strong>${greeting}</strong></span><br> <a
+					href="#" class="w3-bar-item w3-button"><i
+					class="fa fa-envelope"></i></a> <a href="#"
+					class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> <a
+					href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
 			</div>
 		</div>
 		<hr>
@@ -67,8 +75,7 @@ html, body, h1, h2, h3, h4, h5 {
 				class="w3-bar-item w3-button w3-padding"><i
 				class="fa fa-history fa-fw"></i>  History</a> <a href="#"
 				class="w3-bar-item w3-button w3-padding"><i
-				class="fa fa-cog fa-fw"></i>  Settings</a><br>
-			<br>
+				class="fa fa-cog fa-fw"></i>  Settings</a><br> <br>
 		</div>
 	</nav>
 
@@ -82,27 +89,29 @@ html, body, h1, h2, h3, h4, h5 {
 	<div class="w3-main" style="margin-left: 300px; margin-top: 43px;">
 
 		<!-- Header -->
-		<header class="w3-container" style="padding-top: 22px">
-		</header>
+		<header class="w3-container" style="padding-top: 22px"> </header>
 
 		<div class="w3-row-padding w3-margin-bottom">
 			<div class="w3-twothird">
-				<div class="w3-container w3-red w3-padding-16">
+				<div class="w3-container w3-red w3-padding-16" >
 					<div class="w3-left">
-						<i class="fa fa-comment w3-xxxlarge"></i>
+						<img class="w3-quarter" src=${img_location}></img>
+					</div>
+					<div id="inner">
+						<h4>${coin_name}</h4>
 					</div>
 					<div class="w3-right">
 						<h3>&euro;${coin_price}</h3>
 					</div>
 					<div class="w3-clear"></div>
-					<h4>${coin_name}</h4>
+
 				</div>
 			</div>
 		</div>
 
 		<div class="w3-panel">
 			<div class="w3-row-padding" style="margin: 0 -16px">
-				
+
 				<div class="w3-twothird">
 					<h5>${coin_name}</h5>
 					<table class="w3-table w3-striped w3-white">

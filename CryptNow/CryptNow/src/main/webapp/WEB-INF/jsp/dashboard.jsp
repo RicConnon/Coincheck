@@ -8,11 +8,17 @@
 	href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 html, body, h1, h2, h3, h4, h5 {
 	font-family: "Raleway", sans-serif
 }
 </style>
+
+<head>
+	<link rel="shortcut icon" href="http://localhost:8080/CryptNow/images/favicon.ico" />
+</head>
+
 <body class="w3-light-grey">
 
 	<!-- Top container -->
@@ -22,7 +28,9 @@ html, body, h1, h2, h3, h4, h5 {
 			onclick="w3_open();">
 			<i class="fa fa-bars"></i>  Menu
 		</button>
-		<span class="w3-bar-item w3-right">Logo</span>
+		<span class="w3-bar-item w3-right">
+			<img src="images/favicon-32x32.png">
+		</span>
 	</div>
 
 	<!-- Sidebar/menu -->
@@ -31,7 +39,7 @@ html, body, h1, h2, h3, h4, h5 {
 		<br>
 		<div class="w3-container w3-row">
 			<div class="w3-col s4">
-				<img src="/w3images/avatar2.png" class="w3-circle w3-margin-right"
+				<img src="images/favicon-32x32.png" class="w3-circle w3-margin-right"
 					style="width: 46px">
 			</div>
 			<div class="w3-col s8 w3-bar">

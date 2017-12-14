@@ -17,6 +17,16 @@ public class Coin  {
 	private double dayChange;
 	private double weekChange;
 	private double lastUpdated;
+	
+	private String imgLocation;
+
+	public String getImgLocation() {
+		return imgLocation;
+	}
+
+	public void setImgLocation(String imgLocation) {
+		this.imgLocation = imgLocation;
+	}
 
 	public String getId() {
 		return id;

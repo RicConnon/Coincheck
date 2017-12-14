@@ -71,7 +71,7 @@ public class CoinController {
 		
 		Coin coin = coins.get(rank - 1);
 		DecimalFormat format = new DecimalFormat("#,###.00");
-		
+				
 		model.addAttribute("coin_name", coin.getName());
 
 		model.addAttribute("coin_price", coin.getPriceEur());
@@ -81,6 +81,8 @@ public class CoinController {
 		model.addAttribute("change_1h", coin.getHourChange());
 		model.addAttribute("change_24h", coin.getDayChange());
 		model.addAttribute("change_7d", coin.getWeekChange());
+		System.out.println("Coin Location: " + coin.getImgLocation());
+		model.addAttribute("img_location", coin.getImgLocation());
 
 		return "cryptocoin";
 	}
@@ -105,6 +107,32 @@ public class CoinController {
 		coin.setDayChange(obj.getDouble("percent_change_24h"));
 		coin.setWeekChange(obj.getDouble("percent_change_7d"));
 		coin.setLastUpdated(obj.getDouble("last_updated"));
+		
+		switch(obj.getString("id")){
+		case "bitcoin": 
+			coin.setImgLocation("/CryptNow/images/bitcoin.png");
+			break;
+		case "ethereum": 
+			coin.setImgLocation("/CryptNow/images/eth.png");
+			break;
+		case "bitcoin-cash": 
+			coin.setImgLocation("/CryptNow/images/btc.png");
+			break;
+		case "litecoin": 
+			coin.setImgLocation("/CryptNow/images/litecoin.png");
+			break;
+		case "ripple": 
+			coin.setImgLocation("/CryptNow/images/ripple.png");
+			break;
+		case "iota": 
+			coin.setImgLocation("/CryptNow/images/iota.png");
+			break;
+		case "dash": 
+			coin.setImgLocation("/CryptNow/images/dash.png");
+			break;
+		default:
+			break;
+		}
 
 		return coin;
 
@@ -118,7 +146,7 @@ public class CoinController {
 			JSONObject json = JsonReader.readJsonFromUrl(
 					"https://api.coinmarketcap.com/v1/ticker/?convert=EUR&start=" + start + "&limit=1");
 			Coin coin = parseJson(json);
-			System.out.println(coin);
+			//System.out.println(coin);
 			coins.add(coin);
 		}
 
