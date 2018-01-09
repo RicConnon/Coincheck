@@ -3,9 +3,11 @@ package com.coinchecker.controller;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,18 +15,32 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.coinchecker.model.Coin;
 import com.coinchecker.service.JsonReader;
 
 @Controller
-public class CoinController {
+
+public class CoinController extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+	boolean refresh = false;
 
 	@RequestMapping(value = "/coins")
-	public String sampleApi(Model model) throws JSONException, IOException {
+	public String sampleApi(Model model, HttpServletRequest request) throws JSONException, IOException {
 
-		List<Coin> coins = addCoins();
+		HttpSession httpSession = request.getSession();
+
+		@SuppressWarnings("unchecked")
+		List<Coin> coins = (List<Coin>) httpSession.getAttribute("coins");
+
+		if (coins == null || refresh == true) {
+			coins = addCoins();
+			refresh = false;
+			System.out.println("New Coins!");
+		}
+
+		httpSession.setAttribute("coins", coins);
 
 		for (int i = 0; i < coins.size(); i++) {
 			switch (coins.get(i).getRank()) {
@@ -63,20 +79,73 @@ public class CoinController {
 				model.addAttribute("rank7", coins.get(6).getName());
 				model.addAttribute("rank7_pic", coins.get(6).getImgLocation());
 				break;
+			case 8:
+				model.addAttribute("rank8_price", coins.get(7).getPriceEur());
+				model.addAttribute("rank8", coins.get(7).getName());
+				model.addAttribute("rank8_pic", coins.get(7).getImgLocation());
+				break;
+			case 9:
+				model.addAttribute("rank9_price", coins.get(8).getPriceEur());
+				model.addAttribute("rank9", coins.get(8).getName());
+				model.addAttribute("rank9_pic", coins.get(8).getImgLocation());
+				break;
+			case 10:
+				model.addAttribute("rank10_price", coins.get(9).getPriceEur());
+				model.addAttribute("rank10", coins.get(9).getName());
+				model.addAttribute("rank10_pic", coins.get(9).getImgLocation());
+				break;
 			default:
 				break;
+			}
+			double mover = 0;
+			double loser = 0;
+			if (coins.get(i).getDayChange() > mover) {
+				mover = coins.get(i).getDayChange();
+				model.addAttribute("moverCoin", coins.get(i).getName());
+				model.addAttribute("mover", mover);
+			}
+			if (coins.get(i).getDayChange() < loser) {
+				loser = coins.get(i).getDayChange();
+				model.addAttribute("loserCoin", coins.get(i).getName());
+				model.addAttribute("loser", loser);
 			}
 		}
 
 		return "dashboard";
 	}
 
+	@RequestMapping(value = "/reload")
+	public String refresh() {
+		refresh = true;
+
+		return "redirect:/coins.html";
+	}
+
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/details/{rank}")
-	public String coinPage(Model model, @PathVariable int rank) throws JSONException, IOException {
+	public String coinPage(Model model, @PathVariable int rank, HttpServletRequest request)
+			throws JSONException, IOException {
 
-		List<Coin> coins = addCoins();
+		HttpSession httpSession = request.getSession(false);
+		// False because we do not want it to create a new session if it does
+		// not exist.
+		List<Coin> coins = null;
+		Coin coin = null;
+		if (httpSession != null) {
+			coins = (List<Coin>) httpSession.getAttribute("coins");
+		}
 
-		Coin coin = coins.get(rank - 1);
+		if (coins != null) {
+
+			coin = coins.get(rank - 1);
+		} else {
+
+			List<Coin> newCoins = addCoins();
+
+			coin = newCoins.get(rank - 1);
+
+		}
+
 		DecimalFormat format = new DecimalFormat("#,###.00");
 
 		model.addAttribute("coin_name", coin.getName());
@@ -91,6 +160,7 @@ public class CoinController {
 		model.addAttribute("img_location", coin.getImgLocation());
 
 		return "cryptocoin";
+
 	}
 
 	public Coin parseJson(JSONObject json) {
@@ -114,31 +184,7 @@ public class CoinController {
 		coin.setWeekChange(obj.getDouble("percent_change_7d"));
 		coin.setLastUpdated(obj.getDouble("last_updated"));
 
-		switch (obj.getString("id")) {
-		case "bitcoin":
-			coin.setImgLocation("/CryptNow/images/bitcoin.png");
-			break;
-		case "ethereum":
-			coin.setImgLocation("/CryptNow/images/eth.png");
-			break;
-		case "bitcoin-cash":
-			coin.setImgLocation("/CryptNow/images/btc.png");
-			break;
-		case "litecoin":
-			coin.setImgLocation("/CryptNow/images/litecoin.png");
-			break;
-		case "ripple":
-			coin.setImgLocation("/CryptNow/images/ripple.png");
-			break;
-		case "iota":
-			coin.setImgLocation("/CryptNow/images/iota.png");
-			break;
-		case "dash":
-			coin.setImgLocation("/CryptNow/images/dash.png");
-			break;
-		default:
-			break;
-		}
+		coin.setImgLocation("/CryptNow/images/" + obj.getString("id") + ".png");
 
 		return coin;
 
@@ -158,4 +204,5 @@ public class CoinController {
 
 		return coins;
 	}
+
 }

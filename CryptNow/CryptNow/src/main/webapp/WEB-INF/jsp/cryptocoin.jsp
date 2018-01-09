@@ -15,9 +15,9 @@ html, body, h1, h2, h3, h4, h5 {
 </style>
 
 <head>
-<link rel="shortcut icon"
-	href="http://localhost:8080/CryptNow/images/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="/CryptNow/resources/Style.css">
+<link rel="shortcut icon" href="/CryptNow/images/favicon.ico" />
+<link rel="stylesheet" type="text/css"
+	href="/CryptNow/resources/Style.css">
 </head>
 
 <body class="w3-light-grey">
@@ -38,15 +38,11 @@ html, body, h1, h2, h3, h4, h5 {
 		<br>
 		<div class="w3-container w3-row">
 			<div class="w3-col s4">
-				<img src="/w3images/avatar2.png" class="w3-circle w3-margin-right"
-					style="width: 46px">
+				<img style="margin-top: 16px" src="images/favicon-32x32.png"
+					class="w3-circle w3-margin-right" style="width: 46px">
 			</div>
 			<div class="w3-col s8 w3-bar">
-				<span>Welcome, <strong>${greeting}</strong></span><br> <a
-					href="#" class="w3-bar-item w3-button"><i
-					class="fa fa-envelope"></i></a> <a href="#"
-					class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> <a
-					href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+				<h2>CryptNow</h2>
 			</div>
 		</div>
 		<hr>
@@ -93,7 +89,7 @@ html, body, h1, h2, h3, h4, h5 {
 
 		<div class="w3-row-padding w3-margin-bottom">
 			<div class="w3-twothird">
-				<div class="w3-container w3-red w3-padding-16" >
+				<div class="w3-container w3-red w3-padding-16">
 					<div class="w3-left">
 						<img id="coin-icon" class="w3-quarter" src=${img_location}></img>
 					</div>
@@ -156,11 +152,8 @@ html, body, h1, h2, h3, h4, h5 {
 
 		<!-- Footer -->
 		<footer class="w3-container w3-padding-16 w3-light-grey">
-			<h4>FOOTER</h4>
-			<p>
-				Powered by <a href="https://www.w3schools.com/w3css/default.asp"
-					target="_blank">w3.css</a>
-			</p>
+			<button onclick="location.href='/CryptNow/coins.html'"
+				class="w3-button w3-white w3-border w3-round-large">Back</button>
 		</footer>
 
 		<!-- End page content -->

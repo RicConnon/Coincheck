@@ -17,7 +17,7 @@ html, body, h1, h2, h3, h4, h5 {
 
 <head>
 <link rel="shortcut icon"
-	href="http://localhost:8080/CryptNow/images/favicon.ico" />
+	href="/CryptNow/images/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="/CryptNow/resources/Style.css">
 </head>
 
@@ -41,15 +41,11 @@ html, body, h1, h2, h3, h4, h5 {
 		<br>
 		<div class="w3-container w3-row">
 			<div class="w3-col s4">
-				<img src="images/favicon-32x32.png"
+				<img style="margin-top:16px" src="images/favicon-32x32.png"
 					class="w3-circle w3-margin-right" style="width: 46px">
 			</div>
 			<div class="w3-col s8 w3-bar">
-				<span>Welcome, <strong>${greeting}</strong></span><br> <a
-					href="#" class="w3-bar-item w3-button"><i
-					class="fa fa-envelope"></i></a> <a href="#"
-					class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> <a
-					href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+				<h2>CryptNow</h2>
 			</div>
 		</div>
 		<hr>
@@ -99,7 +95,7 @@ html, body, h1, h2, h3, h4, h5 {
 		</header>
 
 		<div class="w3-row-padding w3-margin-bottom">
-			<a href="http://localhost:8080/CryptNow/details/1.html">
+			<a href="/CryptNow/details/1.html">
 				<div class="w3-quarter">
 					<div class="w3-container w3-red w3-padding-16">
 						<div class="w3-left">
@@ -112,7 +108,7 @@ html, body, h1, h2, h3, h4, h5 {
 						<h4>${rank1}</h4>
 					</div>
 				</div>
-			</a> <a href="http://localhost:8080/CryptNow/details/2.html">
+			</a> <a href="/CryptNow/details/2.html">
 				<div class="w3-quarter">
 					<div class="w3-container w3-blue w3-padding-16">
 						<div class="w3-left">
@@ -125,7 +121,7 @@ html, body, h1, h2, h3, h4, h5 {
 						<h4>${rank2}</h4>
 					</div>
 				</div>
-			</a> <a href="http://localhost:8080/CryptNow/details/3.html">
+			</a> <a href="/CryptNow/details/3.html">
 				<div class="w3-quarter">
 					<div class="w3-container w3-teal w3-padding-16">
 						<div class="w3-left">
@@ -138,7 +134,7 @@ html, body, h1, h2, h3, h4, h5 {
 						<h4>${rank3}</h4>
 					</div>
 				</div>
-			</a> <a href="http://localhost:8080/CryptNow/details/4.html">
+			</a> <a href="/CryptNow/details/4.html">
 				<div class="w3-quarter">
 					<div class="w3-container w3-orange w3-text-white w3-padding-16">
 						<div class="w3-left">
@@ -157,67 +153,79 @@ html, body, h1, h2, h3, h4, h5 {
 		<div class="w3-panel">
 			<div class="w3-row-padding" style="margin: 0 -16px">
 
-				<div class="w3-twothird">
+				<div class="w3">
 					<h5>Coins</h5>
-					<table class="w3-table w3-striped w3-white">
-						<tr>
+					<table class="w3-table w3-striped w3-white w3-hoverable" style="cursor: pointer">
+						<tr onclick="document.location='/CryptNow/details/2.html'" class="w3-hover-red">
 							<td><img id="small-coin-icon" src=${rank1_pic}></img></td>
 							<td>${rank1}</td>
 							<td><i>&euro;${rank1_price}</i></td>
 						</tr>
-						<tr>
+						<tr onclick="document.location='/CryptNow/details/2.html'" class="w3-hover-blue">
 							<td><img id="small-coin-icon" src=${rank2_pic}></img></td>
 							<td>${rank2}</td>
 							<td><i>&euro;${rank2_price}</i></td>
 						</tr>
-						<tr>
+						<tr onclick="document.location='/CryptNow/details/3.html'" class="w3-hover-teal">
 							<td><img id="small-coin-icon" src=${rank3_pic}></img></td>
 							<td>${rank3}</td>
 							<td><i>&euro;${rank3_price}</i></td>
 						</tr>
-						<tr>
+						<tr onclick="document.location='/CryptNow/details/4.html'" class="w3-hover-orange">
 							<td><img id="small-coin-icon" src=${rank4_pic}></img></td>
 							<td>${rank4}</td>
 							<td><i>&euro;${rank4_price}</i></td>
 						</tr>
-						<tr>
+						<tr onclick="document.location='/CryptNow/details/5.html'" class="w3-hover-red">
 							<td><img id="small-coin-icon" src=${rank5_pic}></img></td>
 							<td>${rank5}</td>
 							<td><i>&euro;${rank5_price}</i></td>
 						</tr>
-						<tr>
+						<tr onclick="document.location='/CryptNow/details/6.html'" class="w3-hover-blue">
 							<td><img id="small-coin-icon" src=${rank6_pic}></img></td>
 							<td>${rank6}</td>
 							<td><i>&euro;${rank6_price}</i></td>
 						</tr>
-						<tr>
+						<tr onclick="document.location='/CryptNow/details/7.html'" class="w3-hover-teal">
 							<td><img id="small-coin-icon" src=${rank7_pic}></img></td>
 							<td>${rank7}</td>
 							<td><i>&euro;${rank7_price}</i></td>
 						</tr>
+						<tr onclick="document.location='/CryptNow/details/8.html'" class="w3-hover-orange">
+							<td><img id="small-coin-icon" src=${rank8_pic}></img></td>
+							<td>${rank8}</td>
+							<td><i>&euro;${rank8_price}</i></td>
+						</tr>
+						<tr onclick="document.location='/CryptNow/details/9.html'" class="w3-hover-red">
+							<td><img id="small-coin-icon" src=${rank9_pic}></img></td>
+							<td>${rank9}</td>
+							<td><i>&euro;${rank9_price}</i></td>
+						</tr>
+						<tr onclick="document.location='/CryptNow/details/10.html'" class="w3-hover-blue">
+							<td><img id="small-coin-icon" src=${rank10_pic}></img></td>
+							<td>${rank10}</td>
+							<td><i>&euro;${rank10_price}</i></td>
+						</tr>
 					</table>
+					<button onclick="location.href='/CryptNow/reload.html'" 
+					class="w3-button w3-white w3-border w3-round-large w3-right"
+					style="margin-top: 10px">Refresh Coins</button>
 				</div>
 			</div>
 		</div>
 		<hr>
 		<div class="w3-container">
 			<h5>General Stats</h5>
-			<p>New Visitors</p>
+			<p>Biggest Mover</p>
 			<div class="w3-grey">
-				<div class="w3-container w3-center w3-padding w3-green"
-					style="width: 25%">+25%</div>
+				<div id="container1" class="w3-container w3-center w3-padding w3-green"
+					style="width:6.86%">${moverCoin}: ${mover}%</div>
 			</div>
 
-			<p>New Users</p>
+			<p>Biggest Loser</p>
 			<div class="w3-grey">
-				<div class="w3-container w3-center w3-padding w3-orange"
-					style="width: 50%">50%</div>
-			</div>
-
-			<p>Bounce Rate</p>
-			<div class="w3-grey">
-				<div class="w3-container w3-center w3-padding w3-red"
-					style="width: 75%">75%</div>
+				<div id="container2" class="w3-container w3-center w3-padding w3-red"
+					style="width: 11.09%">${loserCoin}: ${loser}%</div>
 			</div>
 		</div>
 		<hr>
